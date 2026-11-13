@@ -59,15 +59,11 @@ now = datetime.now(timezone.utc)
 
 if STATE_FILE.exists():
     state = json.loads(STATE_FILE.read_text(encoding="utf-8"))
-    started = datetime.fromisoformat(state["started_at"])
-
-    if now - started >= timedelta(days=7):
-        stop_workflow()
-        raise SystemExit(0)
 else:
     state = {
         "started_at": now.isoformat(),
         "status": None
+    }
     }
 
 payload = {
