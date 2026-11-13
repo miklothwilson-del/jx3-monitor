@@ -64,7 +64,6 @@ else:
         "started_at": now.isoformat(),
         "status": None
     }
-    }
 
 payload = {
     "username": name,
